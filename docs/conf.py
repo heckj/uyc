@@ -84,9 +84,10 @@ html_theme = 'alabaster'
 # documentation.
 #
 html_theme_options = {
-    'github_button': True,
+    'vcs_pageview_mode': 'edit',
     'github_user': 'heckj',
     'github_repo': 'uyc',
+    'prev_next_buttons_location': 'both'
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

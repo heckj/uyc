@@ -77,11 +77,17 @@ pygments_style = None
 #
 html_theme = 'alabaster'
 
+# https://underneath-your-code.readthedocs.io/en/latest/
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'github_button': True,
+    'github_user': 'heckj',
+    'github_repo': 'uyc',
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -139,7 +145,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'underneathyourcode', 'Underneath your code Documentation',
+    (master_doc, 'underneathyourcode', 'Underneath your code',
      [author], 1)
 ]
 
@@ -150,9 +156,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Underneathyourcode', 'Underneath your code Documentation',
-     author, 'Underneathyourcode', 'One line description of project.',
-     'Miscellaneous'),
+    (master_doc, 'Underneathyourcode', 'Underneath your code',
+     author, 'Underneathyourcode', 'Operations for Developers.',
+     'devops'),
 ]
 
 

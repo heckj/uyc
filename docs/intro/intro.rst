@@ -1,0 +1,31 @@
+================
+What you program
+================
+
+You write code to work or run somewhere, doing something. You’re setting up instructions on how something should look and react. Maybe it is in your web browser, an application on your smartphone, or somewhere on a server receiving and responding to HTTP requests. In all these cases, when you write your code you want and expect to work within some environment. 
+
+What you can do is constrained by this environment, and it in turn may be on another environment. Programs and systems running programs are layered quite deeply. Understanding those layers, what they do, what they don’t do, and how you can take advantage of them will make it easier for you to accomplish your goals.
+
+Let's start peeling the onion from the browser and working down. When you’re running code within a browser, it’s loaded from instructions on the web page that you opened. What your code does within a browser is gated by what it gets as inputs, and what it has access to. Within a browser, there’s the representation of the web page itself, called the DOM (Document Object Model), there’s some details that the browser exposes about itself, and there are the built in libraries within the browser that you can use, which depending on the browser support access to interesting other services - LocalStorage to maintain some persistent information, HTTP to make requests and access the internet, and possibly others. The browser is specifically built to read your code and interpret it, following the instructions based on a set of rules. The thing that runs your JavaScript if often called the “engine” or “interpreter”. But these are just programs as well.
+
+The browser itself is running on some device - maybe your mobile phone, your laptop, or for an example with a lot of additional layers, maybe on a virtual machine running somewhere else in the cloud. If you keep “peeling the onion” to get down to the lower layers, sooner or later you’ll get to a physical device. A lot of the programming we are doing today is based on how we have tended to connect these devices, what they do, and how they do it. A lot of the constraints on what we can and can’t do have likewise been influenced by how the physical devices work. At their core, almost all of these devices use a fairly consistent layout:
+- some amount of physical, more ephemeral memory that doesn’t preserve information when power is removed
+- one or more processors that take instructions and execute them.
+
+These days, there’s almost always a third element that’s included and considered part of this core, only because it’s evolved so closely with the other pieces:
+- some amount of persistent storage where programs and data are stored, and from which they can be loaded
+
+Around this core where often other devices, and very often they were the focus of why you had the microprocessor running there. Keyboards, tape-drives, printers, video displays, and later evolving into different input devices such as mice, trackpads, touchscreens, or digital pens. 
+
+Prior to the internet, most of programming was specific to a device and just what it could “see” and “do” with these devices connected to it. As these core systems evolved, there was a tremendous amount of experimentation and innovation - different microprocessors, different kinds of memory, different ways to attach and connect the systems. These systems also started to be shared, and as the complexity of these systems grew, software was developed to manage how they worked and make the physical devices easier (often by being more consistent) to program. This layer that is called the Operating System. The operating system (often shortened to “OS”) is very prevalent today, where you hear about Linux, Windows, IOS, MacOS, and Android.
+Operating systems started out focused on devices and making them consistent to interact with, somewhat (but not entirely) irregardless of the physical devices on which they ran. Operating systems definitely continued to evolve and expand, and the next important piece of what they added was networking - connecting computing systems together.
+
+With the rise of the Internet, we settled on some more or less consistent patterns of having these systems connect to each other with networks, and learned to deal with the myriad differences in computing platforms. As the internet expanded, “network effects” (the benefit of using growing with the number of people using it) started having a significant influence, and a number of systems grew proportionally larger than the others. You may hear someone talking about how “some technology” won. What they’re really talking about is that technology choice or pattern having significant uptake over other technology choices that provided comparable features. This competition is still ongoing, at all layers of the onion of technology.
+
+Following the rise of the internet, the physical devices for computing systems got sufficiently powerful that we came up with some new ways to split and share those devices - virtualization. To a large extent this was re-implementing ideas that had been used successfully in earlier technology (mainframes), applying them to the technology choices (x86 processors) that had gained the largest uptake. As these features evolved and got their own uptake and growth, they influenced the systems they ran on, as well as the systems running on them. Amazon followed virtualization by providing a pay-as-go use of shared physical devices, seeding the concept of “clouds”.
+
+While all the innovation and competition was taking place, the various choices learned from each other and what worked, and a number of common patterns emerged. People working on the different layers influenced each other, working together (and sometimes not working together), optimizing the code they wrote, or the devices they made, to make it easier, faster, and sometimes more reliable to write and run programs that use their layer.
+
+The rest of this book is focusing on some of the most common patterns that have developed, the conventions that evolved from them, and which are the layers underneath your code.
+
+The contents of this book are meant to be a starting place for learning more, linking to other sources of information for more details or a to dig deeper into that layer. 

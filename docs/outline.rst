@@ -36,7 +36,8 @@ working outline
   - Containers and VMs
   - Shared vs emulated resources
   - Cloud resources to IoT: you have a budget: CPU, Mem, IO
-  - Smaller and smaller bits of computation - microprocessors and embedded devices
+  - Smaller and smaller bits of computation: microprocessors and embedded
+    devices
 
 - Physical stuff breaks, all the time
 

@@ -2,62 +2,184 @@
 Operating Systems
 ====================
 
-Even if your code is running in a browser, that browser is running on a physical device somewhere. The software that manages the physical device and all the software running on it is the Operating System. While there are a lot of operating systems all with their differences, this book will focus on Unix-like operating systems, which make up the vast majority of systems for which you are programming.
+Even if your code is running in a browser, that browser is running on a
+physical device somewhere. The software that manages the physical device and
+all the software running on it is the Operating System. While there are a lot
+of operating systems all with their differences, this book will focus on
+Unix-like operating systems, which make up the vast majority of systems for
+which you are programming.
 
 (Wikipedia has a nice article on the history of operating systems)
 (https://en.m.wikipedia.org/wiki/Operating_system)
 
-Just as the systems are layered and depend on each other, an operating system is built in a layered fashion as well. This layering is exposed in some ways that the operating system provides interfaces to programs that run upon it. The lowest layer of an operating system is the Kernel, which provides a interface to programs running on it, in the area referred to as “user space”. Even while it has been in existence for several decades, the kernel is still under active development. There are some very common stable features of the kernel exposed in the operating system, but it is still growing, changing and evolving. Depending on what you use, some of those features may be changing fairly rapidly, which is why the version of the kernel that is running could be quite important.
-The common features that operating systems evolved have used ideas from other operating systems as they grew, the end result is that there are some common concepts that are recognizable and quite similar across very different operating systems.
+Just as the systems are layered and depend on each other, an operating system
+is built in a layered fashion as well. This layering is exposed in some ways
+that the operating system provides interfaces to programs that run upon it. The
+lowest layer of an operating system is the Kernel, which provides a interface
+to programs running on it, in the area referred to as “user space”. Even while
+it has been in existence for several decades, the kernel is still under active
+development. There are some very common stable features of the kernel exposed
+in the operating system, but it is still growing, changing and evolving.
+Depending on what you use, some of those features may be changing fairly
+rapidly, which is why the version of the kernel that is running could be quite
+important.
+
+The common features that operating systems evolved have used ideas from other
+operating systems as they grew, the end result is that there are some common
+concepts that are recognizable and quite similar across very different
+operating systems.
+
 The most common capabilities that operating systems include:
-- managing the physical memory of a system among all the software wanting to use it, often providing a system called “virtual memory”.
-- coordinating the microprocessor cores and keeping track of which programs have run on the microprocessor.
-- providing a number of consistent interfaces to underlying physical devices - from things like hard-drives and persistent storage to speciality processors like a GPU, or external devices the connect through serial ports or USB.
-- loading programs, often from some persistent storage technology (drives, SSDs, CD-ROMS) and running them.
-- provide an interface to signal, and sometimes terminate programs. Sometimes these capabilities are enabled based on the state of the device - such as running low on available memory or a system powering down.
-- providing and managing the network connections for the device (another specialization of those accessing physical devices), exposing common interfaces for connecting to and communicating with other systems.
 
-The code that makes up the kernel is expected to be the most stable and performant, often optimized for the specific system it is running on, or the devices that are included. All other programs depend on the kernel of the operating system to be reliable in order to function correctly.
+- managing the physical memory of a system among all the software wanting to
+  use it, often providing a system called “virtual memory”.
+- coordinating the microprocessor cores and keeping track of which programs
+  have run on the microprocessor.
+- providing a number of consistent interfaces to underlying physical devices -
+  from things like hard-drives and persistent storage to speciality processors
+  like a GPU, or external devices the connect through serial ports or USB.
+- loading programs, often from some persistent storage technology (drives,
+  SSDs, CD-ROMS) and running them.
+- provide an interface to signal, and sometimes terminate programs. Sometimes
+  these capabilities are enabled based on the state of the device - such as
+  running low on available memory or a system powering down.
+- providing and managing the network connections for the device (another
+  specialization of those accessing physical devices), exposing common
+  interfaces for connecting to and communicating with other systems.
 
-There are three big concepts that almost all operating systems have that are useful to understand: Process, File, and Network.
+The code that makes up the kernel is expected to be the most stable and
+performant, often optimized for the specific system it is running on, or the
+devices that are included. All other programs depend on the kernel of the
+operating system to be reliable in order to function correctly.
+
+There are three big concepts that almost all operating systems have that are
+useful to understand: Process, File, and Network.
 
 The Process
 
 (https://en.wikipedia.org/wiki/Process_(computing))
-The atomic unit of a program running within an operating system is called a Process, and represents an instance of your program running on the operating system. The operating system is responsible for starting, stopping, and controlling the processes - including giving it access to working memory, persistent storage, networking, and so forth.
-Just as the operating system exposes interfaces for accessing these resources, it also exposes an interface for a process to start other processes. A process comes with the idea of a state or status of the process, and comes associated with an amount of memory that it is using. As the operating system is tracking all the resources a process is using, it offers an interfaces to persistent storage in the form of a file system, and to other computers in the form of network sockets.
-A process is the basic unit that permissions are applied to within the operating system. The operating system includes a permission mechanism to allow one process to control or signal another.
+The atomic unit of a program running within an operating system is called a
+Process, and represents an instance of your program running on the operating
+system. The operating system is responsible for starting, stopping, and
+controlling the processes - including giving it access to working memory,
+persistent storage, networking, and so forth.
+
+Just as the operating system exposes interfaces for accessing these resources,
+it also exposes an interface for a process to start other processes. A process
+comes with the idea of a state or status of the process, and comes associated
+with an amount of memory that it is using. As the operating system is tracking
+all the resources a process is using, it offers an interfaces to persistent
+storage in the form of a file system, and to other computers in the form of
+network sockets.
+
+A process is the basic unit that permissions are applied to within the
+operating system. The operating system includes a permission mechanism to allow
+one process to control or signal another.
 
 The File
 (https://en.m.wikipedia.org/wiki/Computer_file)
 
-Along with process, Unix-like operating systems provide the concept and abstraction of a file for accessing information. The concept of a file - that you can open, write to, read from, and close - is such a fundamental need that it is re-used extensively, modeling providing a way to interact with a variety of underlying devices which are not just persistent storage. Keyboard, printers, and more are also represented as a file.
-There are two main patterns of dealing with files that are represented with their own interfaces in operating systems: block and character. The first focuses on reading and writing whole blocks or chunks of memory at a shot. The second more on one-at-a-time access. Files of either kind, and the permissions to access them, make up a huge portion of how you interact with a Unix-like operating system.
-Collections of files, and dealing with them in bulk, are loosely organized into a concept called a Filesystem.
+Along with process, Unix-like operating systems provide the concept and
+abstraction of a file for accessing information. The concept of a file - that
+you can open, write to, read from, and close - is such a fundamental need that
+it is re-used extensively, modeling providing a way to interact with a variety
+of underlying devices which are not just persistent storage. Keyboard,
+printers, and more are also represented as a file.
+
+There are two main patterns of dealing with files that are represented with
+their own interfaces in operating systems: block and character. The first
+focuses on reading and writing whole blocks or chunks of memory at a shot. The
+second more on one-at-a-time access. Files of either kind, and the permissions
+to access them, make up a huge portion of how you interact with a Unix-like
+operating system.
+
+Collections of files, and dealing with them in bulk, are loosely organized into
+a concept called a Filesystem.
+
 (https://en.m.wikipedia.org/wiki/File_system)
-A filesystem is how files are organized and presented, often used to read and write persistent data. There are a large variety of file systems available, each having their own guarantees and commitments.
-The filesystem that an operating system provides is an abstraction. It provides a means of identifying an individual file, opening it and reading from it, and writing to it. It also provides a means of listing existing files, creating new files, and removing or deleting files. All of this is also done with the concept of permissions, which the operating system enforces to constrain processes to accessing (or not) specific files.
+
+A filesystem is how files are organized and presented, often used to read and
+write persistent data. There are a large variety of file systems available,
+each having their own guarantees and commitments.
+
+The filesystem that an operating system provides is an abstraction. It provides
+a means of identifying an individual file, opening it and reading from it, and
+writing to it. It also provides a means of listing existing files, creating new
+files, and removing or deleting files. All of this is also done with the
+concept of permissions, which the operating system enforces to constrain
+processes to accessing (or not) specific files.
+
 
 The Network
+
 (https://en.wikipedia.org/wiki/Computer_network)
 
-Fitting the base structure of reading and writing data, the concept of a network connection was represented as a special “file” with some different attributes. The additional attributes are collected into a common interface called a socket, and represent a single network connection to another computing system. As network protocols evolved, the operating systems offered additional interfaces to create sockets, exposing some of the complexity of those protocols, and hiding others.
-As computing evolved, filesystems and networks worked with and  relied on each other, so in a modern operating system you may have and use filesystems that work entirely over networks.
+Fitting the base structure of reading and writing data, the concept of a
+network connection was represented as a special “file” with some different
+attributes. The additional attributes are collected into a common interface
+called a socket, and represent a single network connection to another computing
+system. As network protocols evolved, the operating systems offered additional
+interfaces to create sockets, exposing some of the complexity of those
+protocols, and hiding others.
 
-In general, an operating system tries to provide an interface that looks the same to your code regardless of the underlying technology and its specific quirks.
+As computing evolved, filesystems and networks worked with and  relied on each
+other, so in a modern operating system you may have and use filesystems that
+work entirely over networks.
 
-A bit of history - as the operating systems were evolving and growing, they didn’t always grow together or consistently. In the early 1980’s there were a huge number of operating systems that were closely related but different. In 1985, a number of people started collaborating on a more consistent interface for programmers, and formed POSIX. (https://en.m.wikipedia.org/wiki/POSIX)
-Portable Open System Interface (POSIX) started out as a set of “bring it together” standards in from 1985 to 1988. It is a common set of Unix-like concepts and includes the underlying definitions for these operating system interfaces. They are formally defined in the POSIX C library (https://en.wikipedia.org/wiki/C_POSIX_library), which is what holds the most basic and common definitions of the abstractions we listed above - Process, File, the basics of what is included with those references and the functions you can use to interact with them.
-The concepts and features of operating systems have evolved quite a bit beyond the basics defined in POSIX. POSIX still defines the core concepts upon which many other features are based. The POSIX interface was intimately tied to the C language, expected to be compiled into machine code specific to the device you are running. Many other languages have developed on top and with C with the intention of making it easier and faster to write software. The concepts from C and the POSIX interface shine through to those other languages where those languages provide libraries to interact with the operating system.
+In general, an operating system tries to provide an interface that looks the
+same to your code regardless of the underlying technology and its specific
+quirks.
+
+A bit of history - as the operating systems were evolving and growing, they
+didn’t always grow together or consistently. In the early 1980’s there were a
+huge number of operating systems that were closely related but different. In
+1985, a number of people started collaborating on a more consistent interface
+for programmers, and formed POSIX. (https://en.m.wikipedia.org/wiki/POSIX)
+
+Portable Open System Interface (POSIX) started out as a set of “bring it
+together” standards in from 1985 to 1988. It is a common set of Unix-like
+concepts and includes the underlying definitions for these operating system
+interfaces. They are formally defined in the POSIX C library (https://
+en.wikipedia.org/wiki/C_POSIX_library), which is what holds the most basic and
+common definitions of the abstractions we listed above - Process, File, the
+basics of what is included with those references and the functions you can use
+to interact with them.
+
+The concepts and features of operating systems have evolved quite a bit beyond
+the basics defined in POSIX. POSIX still defines the core concepts upon which
+many other features are based. The POSIX interface was intimately tied to the C
+language, expected to be compiled into machine code specific to the device you
+are running. Many other languages have developed on top and with C with the
+intention of making it easier and faster to write software. The concepts from C
+and the POSIX interface shine through to those other languages where those
+languages provide libraries to interact with the operating system.
 
 The Shell
 (https://en.wikipedia.org/wiki/Shell_(computing))
 
-Early on in the development of operating systems, developers wanted an ability to interact with the operating system, and this capability was enabled with an interactive “shell”. A shell is a text-based interface that was specifically meant to be interactive, giving rise to one of the earliest interactive interfaces for computers - the command-line interface.
-The shell is not a required part of an operating system, but having a means of interactively working with programs is so useful that I’m including it here. As we look deeper, using a shell also provides a very convenient way to explore the concepts and provide examples.
+Early on in the development of operating systems, developers wanted an ability
+to interact with the operating system, and this capability was enabled with an
+interactive “shell”. A shell is a text-based interface that was specifically
+meant to be interactive, giving rise to one of the earliest interactive
+interfaces for computers - the command-line interface.
 
-Linux, Windows, MacOS and other operating systems - close but not at all identical
+The shell is not a required part of an operating system, but having a means of
+interactively working with programs is so useful that I’m including it here. As
+we look deeper, using a shell also provides a very convenient way to explore
+the concepts and provide examples.
 
-This book focuses on Unix-like operating systems, and it would be foolish not to highlight the operating system that isn’t Unix-like that is used commonly: Windows. Built by Microsoft, Windows is pervasive but doesn’t adhere to POSIX. It also has the concepts of File, Process, and so forth, and recently has provided an interface that operates like a Unix-like operating system. That said, the specifics get very different with Windows.
-Linux is a common Unix-like operating system, available as open source software, and used on servers all over the world. MacOS is also a Unix-like operating system, and many of the concepts and even examples will work identically, or nearly identically, on MacOS. To keep the examples consistent, this book will use Linux for examples.
+Linux, Windows, MacOS and other operating systems - close but not at all
+identical
 
+This book focuses on Unix-like operating systems, and it would be foolish not
+to highlight the operating system that isn’t Unix-like that is used commonly:
+Windows. Built by Microsoft, Windows is pervasive but doesn’t adhere to POSIX.
+It also has the concepts of File, Process, and so forth, and recently has
+provided an interface that operates like a Unix-like operating system. That
+said, the specifics get very different with Windows.
+
+Linux is a common Unix-like operating system, available as open source
+software, and used on servers all over the world. MacOS is also a Unix-like
+operating system, and many of the concepts and even examples will work
+identically, or nearly identically, on MacOS. To keep the examples consistent,
+this book will use Linux for examples.

@@ -1,0 +1,27 @@
+= Underneath Your Code
+Joseph Heck
+v 0.1, 2020-01-23
+:doctype: book
+:creator: {author}
+:producer: Asciidoctor
+:keywords: Development, Operating Systems
+:copyright: Joseph Heck 2019-2020
+:publication-tye: book
+// NOTE use 'anthology' for per-chapter author support
+:idprefix:
+:idseparator: -
+:imagesdir: images
+// :front-cover-image: image:UsingCombineWithSwiftCoverArt_2560x1920.png[fit=cover]
+:google-analytics-account: UA-898243-4
+:source-highlighter: rouge
+:url-issues: https://github.com/heckj/uyc/issues
+:toc: left
+:toclevels: 4
+// enable font-awesome icons in content
+:icons: font
+
+ifndef::ebook-format[:leveloffset: 1]
+
+include::aboutthisbook.adoc[]
+include::introduction.adoc[]
+include::operatingsystyems.adoc[]

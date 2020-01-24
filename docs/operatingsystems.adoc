@@ -1,6 +1,5 @@
-====================
-Operating Systems
-====================
+[#operatingsystems]
+= Operating Systems
 
 Even if your code is running in a browser, that browser is running on a
 physical device somewhere. The software that manages the physical device and
@@ -55,7 +54,7 @@ operating system to be reliable in order to function correctly.
 There are three big concepts that almost all operating systems have that are
 useful to understand: Process, File, and Network.
 
-The Process
+== The Process
 
 (https://en.wikipedia.org/wiki/Process_(computing))
 The atomic unit of a program running within an operating system is called a
@@ -76,7 +75,7 @@ A process is the basic unit that permissions are applied to within the
 operating system. The operating system includes a permission mechanism to allow
 one process to control or signal another.
 
-The File
+== The File
 (https://en.m.wikipedia.org/wiki/Computer_file)
 
 Along with process, Unix-like operating systems provide the concept and
@@ -110,7 +109,7 @@ concept of permissions, which the operating system enforces to constrain
 processes to accessing (or not) specific files.
 
 
-The Network
+== The Network
 
 (https://en.wikipedia.org/wiki/Computer_network)
 
@@ -154,7 +153,8 @@ intention of making it easier and faster to write software. The concepts from C
 and the POSIX interface shine through to those other languages where those
 languages provide libraries to interact with the operating system.
 
-The Shell
+== The Shell
+
 (https://en.wikipedia.org/wiki/Shell_(computing))
 
 Early on in the development of operating systems, developers wanted an ability

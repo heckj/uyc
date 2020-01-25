@@ -9,9 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Build the site in the jekyll/builder container
+    - name: Render the PDF with an asciidoc builder
       run: |
         docker run \
         -v ${{ github.workspace }}:/documents/ \
-         --name asciidoc-to-pdf \
-        heckj/docker-asciidoctor asciidoctor-pdf -v -t -D /documents/output docs/uyc-book.adoc
+        --name asciidoc-to-pdf \
+        heckj/docker-asciidoctor \
+        asciidoctor-pdf -v -t -D /documents/output /documents/docs/uyc-book.adoc

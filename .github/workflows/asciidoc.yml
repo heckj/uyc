@@ -26,4 +26,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: rendered-output
-        path: /workspace/output
+        path: /workspace/output/uyc-book.pdf

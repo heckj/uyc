@@ -25,5 +25,5 @@ jobs:
     - name: upload result
       uses: actions/upload-artifact@v1
       with:
-        name: pdf
-        path: workspace/output/uyc-book.pdf
+        name: uyc-book.pdf
+        path: workspace/output

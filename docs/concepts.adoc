@@ -1,60 +1,6 @@
-[#operatingsystems]
-= Operating Systems
+= Concepts
 
-Even if your code is running in a browser, that browser is running on a
-physical device somewhere. The software that manages the physical device and
-all the software running on it is the Operating System. While there are a lot
-of operating systems all with their differences, this book will focus on
-Unix-like operating systems, which make up the vast majority of systems for
-which you are programming.
-
-(Wikipedia has a nice article on the history of operating systems)
-(https://en.m.wikipedia.org/wiki/Operating_system)
-
-Just as the systems are layered and depend on each other, an operating system
-is built in a layered fashion as well. This layering is exposed in some ways
-that the operating system provides interfaces to programs that run upon it. The
-lowest layer of an operating system is the Kernel, which provides a interface
-to programs running on it, in the area referred to as “user space”. Even while
-it has been in existence for several decades, the kernel is still under active
-development. There are some very common stable features of the kernel exposed
-in the operating system, but it is still growing, changing and evolving.
-Depending on what you use, some of those features may be changing fairly
-rapidly, which is why the version of the kernel that is running could be quite
-important.
-
-The common features that operating systems evolved have used ideas from other
-operating systems as they grew, the end result is that there are some common
-concepts that are recognizable and quite similar across very different
-operating systems.
-
-The most common capabilities that operating systems include:
-
-- managing the physical memory of a system among all the software wanting to
-  use it, often providing a system called “virtual memory”.
-- coordinating the microprocessor cores and keeping track of which programs
-  have run on the microprocessor.
-- providing a number of consistent interfaces to underlying physical devices -
-  from things like hard-drives and persistent storage to speciality processors
-  like a GPU, or external devices the connect through serial ports or USB.
-- loading programs, often from some persistent storage technology (drives,
-  SSDs, CD-ROMS) and running them.
-- provide an interface to signal, and sometimes terminate programs. Sometimes
-  these capabilities are enabled based on the state of the device - such as
-  running low on available memory or a system powering down.
-- providing and managing the network connections for the device (another
-  specialization of those accessing physical devices), exposing common
-  interfaces for connecting to and communicating with other systems.
-
-The code that makes up the kernel is expected to be the most stable and
-performant, often optimized for the specific system it is running on, or the
-devices that are included. All other programs depend on the kernel of the
-operating system to be reliable in order to function correctly.
-
-There are three big concepts that almost all operating systems have that are
-useful to understand: Process, File, and Network.
-
-== The Process
+== Process
 
 (https://en.wikipedia.org/wiki/Process_(computing))
 The atomic unit of a program running within an operating system is called a
@@ -75,7 +21,7 @@ A process is the basic unit that permissions are applied to within the
 operating system. The operating system includes a permission mechanism to allow
 one process to control or signal another.
 
-== The File
+== File
 (https://en.m.wikipedia.org/wiki/Computer_file)
 
 Along with process, Unix-like operating systems provide the concept and
@@ -108,8 +54,7 @@ files, and removing or deleting files. All of this is also done with the
 concept of permissions, which the operating system enforces to constrain
 processes to accessing (or not) specific files.
 
-
-== The Network
+== Network
 
 (https://en.wikipedia.org/wiki/Computer_network)
 
@@ -153,7 +98,7 @@ intention of making it easier and faster to write software. The concepts from C
 and the POSIX interface shine through to those other languages where those
 languages provide libraries to interact with the operating system.
 
-== The Shell
+== Shell
 
 (https://en.wikipedia.org/wiki/Shell_(computing))
 

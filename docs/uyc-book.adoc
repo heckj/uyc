@@ -24,4 +24,5 @@ ifndef::ebook-format[:leveloffset: 1]
 
 include::aboutthisbook.adoc[]
 include::introduction.adoc[]
-include::operatingsystems.adoc[]
+include::platform.adoc[]
+include::concepts.adoc[]

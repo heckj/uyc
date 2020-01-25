@@ -22,3 +22,8 @@ jobs:
         -v ${{ github.workspace }}:/workspace/ \
         heckj/docker-asciidoctor \
         /bin/sh -c "ls -altr /workspace"
+    - name: upload result
+      uses: actions/upload-artifact@v1
+      with:
+        name: pdf
+        path: workspace/output/*.pdf

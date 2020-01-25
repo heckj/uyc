@@ -16,7 +16,7 @@ jobs:
         --name asciidoc-to-pdf \
         heckj/docker-asciidoctor \
         asciidoctor-pdf -v -t -D /workspace/output /workspace/docs/uyc-book.adoc
-    - name: list workspace...
+    - name: list workspace/output
       run: |
         docker run \
         -v ${{ github.workspace }}:/workspace/ \
@@ -26,4 +26,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: pdf
-        path: workspace/output/*.pdf
+        path: workspace/output/uyc-book.pdf

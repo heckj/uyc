@@ -1,6 +1,5 @@
-================
-What you program
-================
+[#whatyouprogram]
+= What you program
 
 You write code to work or run somewhere, doing something. You’re setting up
 instructions on how something should look and react. Maybe it is in your web

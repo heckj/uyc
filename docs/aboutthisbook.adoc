@@ -1,0 +1,38 @@
+[#aboutthisbook]
+= About This Book
+
+Version: {revnumber}
+
+Version Date: {revdate}
+
+This book provides...
+
+== Author Bio
+
+Joe Heck has broad software engineering development and management experience across startups and large companies.
+He works across all the layers of solutions, from architecture, development, validation, deployment, and operations.
+
+Joe has developed projects ranging from mobile and desktop application development to cloud-based distributed systems.
+He has established teams, development processes, CI and CD pipelines, and developed validation and operational automation.
+Joe also builds and mentors people to learn, build, validate, deploy and run software services and infrastructure.
+
+Joe works extensively with and in open source, contributing and collaborating with a wide variety of open source projects.
+He writes online across a variety of topics at https://rhonabwy.com/.
+
+[cols="3*^",frame=none,grid=none,width=50%]
+|===
+.^| https://github.com/heckj[icon:github[size=2x,set=fab]]
+.^| https://www.linkedin.com/in/josephheck/[icon:linkedin[size=2x,set=fab]]
+.^| http://twitter.com/heckj[icon:twitter[size=2x,set=fab]]
+|===
+
+== Where to get this book
+
+You may also purchase the PDF or ePub at http://gumroad.com/l/uyc.
+Any purchases will support the development of this book, including technical review, copy editing, and graphics work.
+
+Updates of the content will be made to the online version as development continues.
+Larger updates and announcements will also be provided through https://gumroad.com/heckj[the author's profile at Gumroad].
+
+// force a page break - ignored in HTML rendering
+<<<

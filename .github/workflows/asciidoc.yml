@@ -15,13 +15,13 @@ jobs:
         -v ${{ github.workspace }}:/workspace/ \
         --name asciidoc-to-pdf \
         heckj/docker-asciidoctor \
-        asciidoctor-pdf -v -t -D /workspace/output docs/uyc-book.adoc
-    - name: checkout the workspace...
+        asciidoctor-pdf -v -t -D /workspace/output /workspace/docs/uyc-book.adoc
+    - name: list workspace...
       run: |
         docker run \
         -v ${{ github.workspace }}:/workspace/ \
         heckj/docker-asciidoctor \
-        /bin/sh -c "ls -altr /workspace"
+        /bin/sh -c "ls -altr /workspace/output"
     - name: upload result
       uses: actions/upload-artifact@v1
       with:

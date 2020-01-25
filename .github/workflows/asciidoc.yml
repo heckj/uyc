@@ -12,7 +12,13 @@ jobs:
     - name: Render the PDF with an asciidoc builder
       run: |
         docker run \
-        -v ${{ github.workspace }}:/documents/ \
+        -v ${{ github.workspace }}:/workspace/ \
         --name asciidoc-to-pdf \
         heckj/docker-asciidoctor \
-        asciidoctor-pdf -v -t -D /documents/output /documents/docs/uyc-book.adoc
+        asciidoctor-pdf -v -t -D /workspace/output /workspace/docs/uyc-book.adoc
+      
+    - name: upload result
+      uses: actions/upload-artifact@v1
+      with:
+        name: rendered-output
+        path: output/uyc-book.pdf

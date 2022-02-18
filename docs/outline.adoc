@@ -10,7 +10,8 @@
   - sometimes this crosses boundaries: e.g. seeing stuff running in a terminal through your browser (you'll see this ALL the time in continuation integration and testing)
 
   - android, ios - operating system
-  - linux, windows - operating system (cloud or physical)
+  - macos, linux, windows - operating system (cloud or physical)
+    - constrained OS (containers, VMs (JVM, Erlang, etc)) - inception layers
   - browser (chrome, safari, edge)
   - arduino - embedded
 
@@ -18,7 +19,12 @@
   - networking
   - files (block, object) and persistence
   - memory, processes, and threads
-  
+
+- ?? hardware acceleration:
+  - GPU
+  - networking accelerators (crypto/hash processors, compression processors)
+  - security enclaves
+
 - Some basics about how operating systems work:
   - Init, systems, hierarchy of processes and how they coordinate
   - Kernel vs. user space and permissions, and privileges
@@ -36,18 +42,21 @@
     - shell scripts and some of Unix CLI concepts
     - commands, pipes, STDOUT, STDERR, STDIN
     - environment variables, and shell tests
+    - OS level registry (Windows registry, user preferences mechanisms, etc)
 
 - Operating system - the next step from the basics
   - Devices (physical and virtual) and IO
     - Serial ports, block and character devices, what is POSIX
-    - USB and Bluetooth
+    - USB, Wifi, Ethernet, and Bluetooth
+      - bandwidth, latency, power, and range tradeoffs
     - Specialized hardware (GPUs, Accelerators, etc)
       - code within code within code (layers of inception)
 
 - Another layer of indirection:
   - Containers and VMs
-  - Shared vs emulated resources
+  - Shared vs emulated resources (container vs. VM, container && VM)
   - Cloud resources to IoT: you have a budget: CPU, Mem, IO
+    - & power?
   - Smaller and smaller bits of computation: microprocessors and embedded
     devices
 
